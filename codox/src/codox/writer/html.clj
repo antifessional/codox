@@ -361,6 +361,7 @@
          (for [doc docs]
            [:li (link-to (doc-filename doc) (h (:title doc)))])]))
      [:h2 "Namespaces"]
+     [:div.namespaces-in-main
      (for [namespace (sort-by :name (:namespaces project))]
        [:div.namespace
         [:h3 (link-to (ns-filename namespace) (h (:name namespace)))]
@@ -369,7 +370,7 @@
          [:p "Public variables and functions:"]
          (unordered-list
           (for [var (sorted-public-vars namespace)]
-            (list " " (link-to (var-uri namespace var) (h (:name var))) " ")))]])]]))
+            (list " " (link-to (var-uri namespace var) (h (:name var))) " ")))]])]]]))
 
 (defmulti format-document
   "Format a document into HTML."
