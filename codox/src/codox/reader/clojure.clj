@@ -152,4 +152,4 @@
                   (find-namespaces)
                   (mapcat #(read-ns % exception-handler))
                   (remove :no-doc)))
-           paths)))
+           (distinct paths))))
